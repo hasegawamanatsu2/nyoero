@@ -81,6 +81,19 @@ const {siteInfo} =useGlobal()
               {post.summary}
             </main>
           )}
+        {/* 曲风/流派显示 */}
+        {post.genre && post.genre.length > 0 && (
+          <div className='mt-2 flex flex-wrap gap-1'>
+            {post.genre.map((g, index) => (
+          <span
+            key={index}
+                className='px-2 py-1 text-xs bg-purple-100 text-purple-600 dark:bg-purple-900 dark:text-purple-300 rounded-full'
+          >
+            🎵 {g}
+          </span>
+        ))}
+      </div>
+            )}
 
           {/* 分类标签 */}
           <div className='mt-auto justify-between flex'>
